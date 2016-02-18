@@ -1,0 +1,185 @@
+Results Table
+
+The following tables use the following preset values:
+
+N 	// number of cities
+100	// number of tours in a generation
+1000 	// number of generations to run
+50	// percent of tours in a generation to keep as mutants
+15	// percent of tours in a generation to keep as elites
+
+Run 1, 10 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 229.500 
+Time taken :   0.035 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 234.000 
+Percent of Optimal = 101.961 
+Time taken :   0.019 seconds 
+
+Run 2, 11 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 259.500 
+Time taken :   0.315 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 322.000 
+Percent of Optimal = 124.085 
+Time taken :   0.020 seconds 
+
+
+
+
+
+
+Run 3, 12 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 237.500 
+Time taken :   3.682 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 350.500 
+Percent of Optimal = 147.579 
+Time taken :   0.021 seconds
+
+Run 4, 13 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 243.500 
+Time taken :  46.361 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 404.500 
+Percent of Optimal = 166.119 
+Time taken :   0.020 seconds 
+
+Run 5, 14 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 222.000 
+Time taken : 626.865 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 478.000 
+Percent of Optimal = 215.315 
+Time taken :   0.021 seconds
+
+
+
+
+
+The following tables use the following preset values, the same as previously but with 10000 in each generation :
+
+N 	// number of cities
+100	// number of tours in a generation
+10000 	// number of generations to run
+50	// percent of tours in a generation to keep as mutants
+15	// percent of tours in a generation to keep as elites
+
+Run 1, 10 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 229.500 
+Time taken :   0.037 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 229.500 
+Percent of Optimal = 100.000 
+Time taken :   0.188 seconds
+
+Run 2, 11 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 259.500 
+Time taken :   0.302 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 266.500 
+Percent of Optimal = 102.697 
+Time taken :   0.202 seconds
+
+
+
+
+
+
+
+
+
+
+
+Run 3, 12 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 237.500 
+Time taken :   3.684 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 350.500 
+Percent of Optimal = 147.579 
+Time taken :   0.208 seconds
+
+Run 4, 13 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 243.500 
+Time taken :  46.382 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 353.000 
+Percent of Optimal = 144.969 
+Time taken :   0.201 seconds
+
+Run 5, 14 cities :
+
+Running Brute Force Method . . . 
+ 
+Brute Force Method 
+Optimal Cost = 222.000 
+Time taken : 626.753 seconds 
+ 
+Running Genetic Algorithm . . . 
+ 
+Genetic Method 
+Cost = 405.500 
+Percent of Optimal = 182.658
