@@ -1,0 +1,70 @@
+/***************************************************************
+  Paul Lewis
+  File Name: MANUAL.txt
+  Genetic Algorithms and Permutations
+
+  User's manual for running program
+***************************************************************/
+
+    Compiling program:
+
+The program has a Makefile so the program can be compiled simply by typing 'make' when
+in the directory.
+Alternatively the program can be compiled using the following:
+gcc -Wall geneticPerm.c tour.c -o genetic
+
+    Running the program:
+
+Run the program with the following command:
+./genetic
+
+The program requires two text files. 
+The first, cities.txt, must contain 380 doubles each on a separate line.
+The second, Presets.txt, contains 5 integers on 5 lines.
+The first is the number of cities to permute.
+The second is the number of tours in a generation.
+The third is the number of generations to run.
+The fourth is the percentage of tours to keep as mutants in a generation.
+The fifth is the percentage of tours to keep as elites in a generation.
+
+Example:
+
+10      // 10 cities.
+100     // 100 tours in a generation
+1000    // 1000 generations to run
+50      // 50 percent of tours to keep as mutants
+15      // 15 percent of tours to keep as elites
+
+    Method used:
+
+For my brute force algorithm I just used the permutation algorithm provided by Dr. Coffey,
+changing to work with tour structs and calculating the cost of each permutation, and also
+changing int nfact and int i to type 'unsigned long long'.
+
+For my genetic algorithm, first it allocates an array of struct tour pointers of the generation size,
+then it allocates a tour struct on each one. Then it allocates an array of struct tour pointers of the
+size of the number of elites to keep. These are used as temporary pointers.
+
+Then for the first generation it generates a number of tours in the generation array. It does this 
+by simply changing the values in the struct rather than allocating a new struct each time. This is 
+done to minimize the number of calls to malloc() and free().
+
+It then sorts the array using Comb Sort. Comb sort is a variation of bubble sort. I wanted to use bubble sort
+because the list to sort is small (100 elements) and bubble sort has best case of O(n) for mostly
+sorted lists. Because we are keeping the elites and mutants, which will be at the bottom of the list,
+I assume that the list may often be mostly sorted (or ~50% sorted depending on the number of elites and mutants to keep). 
+Comb sort differs from bubble sort in that instead of swapping elements which are adjacent to each other 
+it uses a 'gap' to swap elements which are a given distance from each other and reduces the size of the gap on each pass. 
+This is to minimize the amount of 'turtles', i.e. small values at the end of the list which can take an excessive amount
+of time to move down the list. Comb sort approaches O(n logn) on its average case performance more commonly
+than bubble sort or similar algorithms such as insertion sort, selection sort, or shell sort. 
+
+After sorting the list, the program assigns the pointers in the elite array to the bottom elements in
+the list which are now the elites to keep. It then goes to the array index numMutants+numElites-1 
+(the last and least optimal tour to keep as a mutant) and then goes down the list a number of times
+equal to the number of elites and transforms those tours into elites, then mutates them using the 
+mutate() function which swaps the first city with the last city (city 0 is not included). It then repeats
+this process again with the next tours equal to the number of elites but it instead calls the mutate2() 
+function which swaps the middle cities. It then simply mutates the rest of the mutants which are the most optimal mutants.
+
+It then repeats this process for each generation but keeping the mutants and elites from the previous generation.
